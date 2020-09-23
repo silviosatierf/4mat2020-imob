@@ -10,7 +10,7 @@ const db = require('./config/database')
 const dbUser = process.env.DB_USER
 const dbPass = process.env.DB_PASS
 const dbName = process.env.DB_NAME
-db(`mongodb+srv://${dbUser}:${dbPass}@cluster0.31jwc.gcp.mongodb.net/${dbName}?retryWrites=true&w=majority`)
+db(`mongodb+srv://${dbUser}:${dbPass}@cluster0.koos7.gcp.mongodb.net/${dbName}?retryWrites=true&w=majority`)
 
 var app = express();
 
@@ -38,5 +38,10 @@ app.use('/professor', professor)
 // Rota para sala-aula
 const sala_aula = require('./routes/sala_aula')
 app.use('/sala-aula', sala_aula)
+
+// Rota para turma
+const turma = require('./routes/turma')
+app.use('/turma', turma)
+
 
 module.exports = app;
