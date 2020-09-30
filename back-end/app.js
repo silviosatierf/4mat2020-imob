@@ -43,5 +43,20 @@ app.use('/sala-aula', sala_aula)
 const turma = require('./routes/turma')
 app.use('/turma', turma)
 
+// Rota para complemento
+const complemento = require('./routes/complemento')
+app.use('/complemento', complemento)
+
+// Rota para detalhe
+const detalhe = require('./routes/detalhe')
+app.use('/detalhe', detalhe)
+
+// Rota para identificação
+const identificacao = require('./routes/identificacao')
+app.use('/identificacao', identificacao)
+
+// Rota para Imovel
+const imovel = require('./routes/imovel')
+app.use('/imovel', imovel)
 
 module.exports = app;
