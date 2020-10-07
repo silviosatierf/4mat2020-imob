@@ -59,4 +59,8 @@ app.use('/identificacao', identificacao)
 const imovel = require('./routes/imovel')
 app.use('/imovel', imovel)
 
+// Rota para Corretor
+const corretor = require('./routes/corretor')
+app.use('/corretor', corretor)
+
 module.exports = app;

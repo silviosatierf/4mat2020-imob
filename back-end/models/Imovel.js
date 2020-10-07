@@ -4,7 +4,8 @@ const esquema = mongoose.Schema({
     nome: { type: String, required: true },
     complemento:{type: mongoose.ObjectId, ref: 'Complemento', required: true}, // Referencia a outra entidade (Chave Estrangeira)
     identificacao:{type: mongoose.ObjectId, ref: 'Identificacao', required: true},// Referencia a outra entidade (Chave Estrangeira)
-    detalhe:{type: mongoose.ObjectId, ref: 'Detalhe', required: true} // Referencia a outra entidade (Chave Estrangeira)
+    detalhe:{type: mongoose.ObjectId, ref: 'Detalhe', required: true}, // Referencia a outra entidade (Chave Estrangeira)
+    corretor:{type: mongoose.ObjectId, ref: 'Corretor', required: true}
 })
 
 // PARÂMETROS DO mongoose.model()
