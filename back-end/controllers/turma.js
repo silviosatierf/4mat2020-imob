@@ -54,6 +54,7 @@ controller.listar = async (req, res) => {
         .populate('curso')// o populate trará o nome do curos ao inves do seu ID // Dados completos
         .populate('professor', 'nome email') // Só quero o nome e o email
         .populate('sala_aula')//Dados completos
+        
         res.send(dados) // Vai com status 200: OK
     }
     catch (erro) {

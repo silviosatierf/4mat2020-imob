@@ -54,6 +54,7 @@ controller.listar = async (req, res) => {
         .populate('detalhe')// o populate trará o nome do curos ao inves do seu ID // Dados completos
         .populate('identificacao') // Só quero o nome e o email
         .populate('complemento')//Dados completos
+        .populate('corretor', 'nome_proprietario')
         res.send(dados) // Vai com status 200: OK
     }
     catch (erro) {
