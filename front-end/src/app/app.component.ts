@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
+    <app-main-toolbar [appName]="title"></app-main-toolbar>
     <!--The content below is only a placeholder and can be replaced.-->
     <div style="text-align:center" class="content">
       <h1>
@@ -28,5 +29,5 @@ import { Component } from '@angular/core';
   styles: []
 })
 export class AppComponent {
-  title = 'front-end';
+  title = 'Escola Agora Vai';
 }
