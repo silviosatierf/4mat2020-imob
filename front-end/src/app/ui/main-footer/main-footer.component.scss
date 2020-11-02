@@ -1,0 +1,29 @@
+mat-toolbar {
+    //Centralizar os itens
+    justify-content: center;
+    // diminuir o tamanho da font
+    font-size: 90%;
+    // dimunir a altura da toolbar
+    height: 32px;
+    // posicionando a toolbar no fundo da pagina
+    position: fixed;
+    bottom: 0;
+
+    // No SCSS é possivel escrever a regra para o elemento filho
+    //dentro da regra do elemento pai
+    mat-icon{
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+    }
+
+
+}
+
+/* CSS PURO
+mat-toolbar mat-icon{
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+
+}
