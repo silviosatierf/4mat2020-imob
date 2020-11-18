@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CursoFormComponent implements OnInit {
 
+  title : string = 'Novo curso'
+
+  curso : any = {} // objeto vazio, nome da entidade no SINGULAR
+
   constructor() { }
 
   ngOnInit(): void {

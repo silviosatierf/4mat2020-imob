@@ -39,3 +39,16 @@ div.content {
         font-size: 110%;
     }
 }
+
+.std-form {
+ 
+   max-width: 80%;
+   margin: 0 auto;
+ 
+   mat-form-field {
+      min-width: 150px;
+      max-width: 500px;
+      width: 100%;
+      margin-right: 30px;
+   }
+}
