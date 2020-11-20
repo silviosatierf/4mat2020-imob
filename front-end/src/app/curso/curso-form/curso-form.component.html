@@ -1,22 +1,45 @@
 <h1>{{ title }}</h1>
 
-<form class="std-form">
-  <mat-form-field appearance="fill">
+<form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+  <mat-form-field>
     <mat-label>Nome do Curso</mat-label>
     <input name="nome" [(ngModel)]="curso.nome" matInput required
       placeholder="Informe o nome do curso">
   </mat-form-field>
 
-  <mat-form-field appearance="fill">
+  <mat-form-field>
     <mat-label>Carga Horaria</mat-label>
     <input name="carga_horaria" [(ngModel)]="curso.carga_horaria" matInput required
       placeholder="Informe a carga horária" type="number">
   </mat-form-field>
 
-  <mat-form-field appearance="fill">
+  <mat-form-field>
     <mat-label>Nivel</mat-label>
-    <mat-select name="nivel" []>
-      <mat-option value="option">Option</mat-option>
+    <mat-select name="nivel" [(ngModel)]="curso.nivel" required>
+      <!--mat-option value="Básico">Básico</mat-option>
+      <mat-option value="Intermediário">Intermediário</mat-option>
+      <mat-option value="Avançado">Avançado</mat-option-->
+      <mat-option *ngFor="let nivel of niveis" [value]="nivel.valor">
+        {{ nivel.descr }}
+      </mat-option>
     </mat-select>
   </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Valor do curso</mat-label>
+    <input name="valor_curso" [(ngModel)]="curso.valor_curso" matInput required
+      placeholder="Informe o valor do curso" type="number">
+  </mat-form-field>
+
+  <mat-toolbar class="form-buttons">
+    <mat-toolbar-row>
+      <button mat-raised-button type="submit" color="accent">
+        Salvar
+      </button>
+      <button mat-raised-button type="button" (click)="voltar(f)">
+        Voltar
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
 </form>

@@ -12,6 +12,7 @@ const dbPass = process.env.DB_PASS
 const dbName = process.env.DB_NAME
 db(`mongodb+srv://${dbUser}:${dbPass}@cluster0.koos7.gcp.mongodb.net/${dbName}?retryWrites=true&w=majority`)
 
+
 var app = express();
 
 const cors = require('cors');

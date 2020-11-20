@@ -42,7 +42,7 @@ div.content {
 
 .std-form {
  
-   max-width: 80%;
+   //max-width: 80%;
    margin: 0 auto;
  
    mat-form-field {
@@ -50,5 +50,15 @@ div.content {
       max-width: 500px;
       width: 100%;
       margin-right: 30px;
+   }
+
+   .form-buttons {
+       background: transparent;
+
+       mat-toolbar-row{
+
+           display: flex;
+           justify-content:space-around;
+       }
    }
 }
