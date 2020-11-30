@@ -1,5 +1,12 @@
+// Bem no inicio do arquivo app.module.ts
+import { NgxMaskModule, IConfig } from 'ngx-mask'
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
+// Na secção de imports do app.module.ts
+// Habilitar formatação de moeda e data em protugues
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 registerLocaleData(localePt);
@@ -38,7 +45,8 @@ import { TurmaFormComponent } from './turma/turma-form/turma-form.component';
     MaterialModule,
     HttpClientModule,
     FormsModule,
-    MatMomentDateModule
+    MatMomentDateModule,
+    NgxMaskModule.forRoot()
   ],
   providers: [
     // No app.module.ts, dentro seção providers
