@@ -1,0 +1,35 @@
+<h1>{{ title }}</h1>
+
+<form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+  
+  <mat-form-field>
+    <mat-label>Codigo</mat-label>
+    <input name="codigo" [(ngModel)]="complemento.codigo" matInput required
+      placeholder="Informe o codigo do complemento" type="number">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Perfil</mat-label>
+    <mat-select name="perfil" [(ngModel)]="complemento.perfil" required>
+      <!--mat-option value="Básico">Básico</mat-option>
+      <mat-option value="Intermediário">Intermediário</mat-option>
+      <mat-option value="Avançado">Avançado</mat-option-->
+      <mat-option *ngFor="let perfil of perfis" [value]="perfil.valor">
+        {{ perfil.descr }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  
+  <mat-toolbar class="form-buttons">
+    <mat-toolbar-row>
+      <button mat-raised-button type="submit" color="accent">
+        Salvar
+      </button>
+      <button mat-raised-button type="button" (click)="voltar(f)">
+        Voltar
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+</form>

@@ -1,0 +1,127 @@
+<h1>{{ title }}</h1>
+
+<form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+  <mat-form-field>
+    <mat-label>Nome do Imóvel</mat-label>
+    <input name="nome" [(ngModel)]="imovel.nome" matInput required
+      placeholder="Informe o nome do imovel">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Endereço</mat-label>
+    <input name="endereco" [(ngModel)]="imovel.endereco" matInput required
+      placeholder="Informe o endereco do imovel">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Numero</mat-label>
+    <input name="numero" [(ngModel)]="imovel.numero" matInput required
+      placeholder="Informe o numero do imovel" type="number">
+  </mat-form-field>  
+
+  <mat-form-field>
+    <mat-label>Bairro</mat-label>
+    <input name="bairro" [(ngModel)]="imovel.bairro" matInput required
+      placeholder="Informe o bairro do imovel">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Area Construida</mat-label>
+    <input name="area_construida" [(ngModel)]="imovel.area_construida" matInput required
+      placeholder="Informe a area construida do imovel" type="number">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Area Total</mat-label>
+    <input name="areaTotal" [(ngModel)]="imovel.areaTotal" matInput required
+      placeholder="Informe a area total do imovel" type="number">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Quartos</mat-label>
+    <input name="qtdeQuarto" [(ngModel)]="imovel.qtdeQuarto" matInput required
+      placeholder="Informe o numero de quartos" type="number">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Suite</mat-label>
+    <input name="qtdeSuite" [(ngModel)]="imovel.qtdeSuite" matInput required
+      placeholder="Informe o numero de suite" type="number">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Sala</mat-label>
+    <input name="qtdeSala" [(ngModel)]="imovel.qtdeSala" matInput required
+      placeholder="Informe o numero de sala" type="number">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Cozinha</mat-label>
+    <input name="qtdeCozinha" [(ngModel)]="imovel.qtdeCozinha" matInput required
+      placeholder="Informe o numero de cozinha" type="number">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Vaga Garagem</mat-label>
+    <input name="vagasGaragem" [(ngModel)]="imovel.vagasGaragem" matInput required
+      placeholder="Informe o numero de Garagem" type="number">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Banheiro</mat-label>
+    <input name="qtdeBanheiro" [(ngModel)]="imovel.qtdeBanheiro" matInput required
+      placeholder="Informe o numero de Banheiro" type="number">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Nome do Proprietario do Imóvel</mat-label>
+    <input name="nome_proprietario" [(ngModel)]="imovel.nome_proprietario" matInput required
+      placeholder="Informe o nome do proprietario do imovel">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Complemento</mat-label>
+    <mat-select name="complemento" [(ngModel)]="imovel.complemento" required>
+       <!-- No mat-option, usamso a listagem da entidade relacionada
+        para gerar as opções que serão exibidas ao usuario-->
+      <mat-option *ngFor="let complemento of complementos" [value]="complemento._id">
+        {{ complemento.nome }} ({{complemento.perfil}})
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Corretor</mat-label>
+    <mat-select name="corretor" [(ngModel)]="imovel.corretor" required>
+       <!-- No mat-option, usamso a listagem da entidade relacionada
+        para gerar as opções que serão exibidas ao usuario-->
+      <mat-option *ngFor="let corretor of corretores" [value]="corretor._id">
+        {{ corretor.nome }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Identificacao</mat-label>
+    <mat-select name="identificacao" [(ngModel)]="imovel.identificacao" required>
+       <!-- No mat-option, usamso a listagem da entidade relacionada
+        para gerar as opções que serão exibidas ao usuario-->
+      <mat-option *ngFor="let identificacao of identificacoes" [value]="identificacao._id">
+        {{identificacao.tipo}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-toolbar class="form-buttons">
+    <mat-toolbar-row>
+      <button mat-raised-button type="submit" color="accent">
+        Salvar
+      </button>
+      <button mat-raised-button type="button" (click)="voltar(f)">
+        Voltar
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+</form>
+

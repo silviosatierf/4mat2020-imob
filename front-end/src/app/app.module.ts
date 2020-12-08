@@ -25,6 +25,15 @@ import { CursoFormComponent } from './curso/curso-form/curso-form.component';
 import {​​ FormsModule }​​ from '@angular/forms';
 import { TurmaListComponent } from './turma/turma-list/turma-list.component';
 import { TurmaFormComponent } from './turma/turma-form/turma-form.component';
+import { CorretorListComponent } from './corretor/corretor-list/corretor-list.component';
+import { CorretorFormComponent } from './corretor/corretor-form/corretor-form.component';
+import { ComplementoListComponent } from './complemento/complemento-list/complemento-list.component';
+import { ComplementoFormComponent } from './complemento/complemento-form/complemento-form.component';
+import { IdentificacaoListComponent } from './identificacao/identificacao-list/identificacao-list.component';
+import { IdentificacaoFormComponent } from './identificacao/identificacao-form/identificacao-form.component';
+import { ImovelListComponent } from './imovel/imovel-list/imovel-list.component';
+import { ImovelFormComponent } from './imovel/imovel-form/imovel-form.component';
+
 
 
 @NgModule({
@@ -36,7 +45,16 @@ import { TurmaFormComponent } from './turma/turma-form/turma-form.component';
     CursoListComponent,
     CursoFormComponent,
     TurmaListComponent,
-    TurmaFormComponent
+    TurmaFormComponent,
+    CorretorListComponent,
+    CorretorFormComponent,
+    ComplementoListComponent,
+    ComplementoFormComponent,
+    IdentificacaoListComponent,
+    IdentificacaoFormComponent,
+    ImovelListComponent,
+    ImovelFormComponent
+    
   ],
   imports: [
     BrowserModule,

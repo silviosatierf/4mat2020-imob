@@ -1,0 +1,27 @@
+<h1>{{ title }}</h1>
+
+<form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+  <mat-form-field>
+    <mat-label>Nome do Corretor</mat-label>
+    <input name="nome" [(ngModel)]="corretor.nome" matInput required
+      placeholder="Informe o nome do corretor">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Código Creci</mat-label>
+    <input name="cod_creci" [(ngModel)]="corretor.cod_creci" matInput required
+      placeholder="Informe o codigo CRECI" type="number">
+  </mat-form-field>
+
+  <mat-toolbar class="form-buttons">
+    <mat-toolbar-row>
+      <button mat-raised-button type="submit" color="accent">
+        Salvar
+      </button>
+      <button mat-raised-button type="button" (click)="voltar(f)">
+        Voltar
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+</form>

@@ -1,11 +1,16 @@
 const mongoose = require('mongoose')
 
 const esquema = mongoose.Schema({
-    data_ativacao: { type: Date, required: true },
-    status: {
+    codigo: {
+        type: Number,
+        required: true  // Atributo obrigatório
+    },
+    perfil: {
         type: String,
         required: true,
-    }
+        // Conjunto dos valores válidos
+        enum: ['Novo', 'Usado', 'Inativo']
+    },
 })
 
 // PARÂMETROS DO mongoose.model()

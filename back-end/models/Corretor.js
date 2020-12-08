@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 
 const esquema = mongoose.Schema({
-    nome_proprietario: { type: String, required: true},
-    codigo:{ type: Number, required: true},
+    nome: { type: String, required: true},
+    cod_creci:{ type: Number, required: true},
     
 })
 
