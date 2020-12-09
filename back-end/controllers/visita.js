@@ -27,7 +27,7 @@
 */
 
 // Importar o model para dentro do controller
-const Imovel = require('../models/Imovel')
+const Visita = require('../models/Visita')
 
 const controller = {}       // Objeto vazio
 
@@ -35,7 +35,7 @@ const controller = {}       // Objeto vazio
 controller.novo = async (req, res) => {
     try {
         // Envia os dados dentro de req.body para o BD para criação
-        await Imovel.create(req.body)
+        await Visita.create(req.body)
         // HTTP 201: Created
         res.status(201).end()
     }
@@ -50,10 +50,9 @@ controller.novo = async (req, res) => {
 controller.listar = async (req, res) => {
     try {
         // find() sem parâmetros é para trazer tudo
-        let dados = await Imovel.find()
-        .populate('identificacao') // Só quero o nome e o email
-        .populate('complemento')//Dados completos
-        .populate('corretor')
+        let dados = await Visita.find()
+        .populate('imovel')// o populate trará o nome do curos ao inves do seu ID // Dados completos
+                
         res.send(dados) // Vai com status 200: OK
     }
     catch (erro) {
@@ -65,7 +64,7 @@ controller.listar = async (req, res) => {
 // Método obterUm(), implementando a operação RETRIEVE (one)
 controller.obterUm = async (req, res) => {
     const id = req.params.id    // Capturando o parâmetro id
-    let obj = await Imovel.findById(id)
+    let obj = await Visita.findById(id)
 
     // Se o objeto vier preenchido (achou), então o retornamos
     if (obj) res.send(obj)
@@ -79,7 +78,7 @@ controller.atualizar = async (req, res) => {
         // Isolar o _id do objeto para fins de busca
         const id = req.body._id
         // Busca o objeto pelo id e, encontrando-o, substitui o conteúdo por req.body
-        let obj = await Imovel.findByIdAndUpdate(id, req.body)
+        let obj = await Visita.findByIdAndUpdate(id, req.body)
 
         // Se encontrou e substituiu, retornamos HTTP 204: No content
         if (obj) res.status(204).end()
@@ -97,7 +96,7 @@ controller.excluir = async (req, res) => {
     try {
         // Isolando o id para exclusão
         const id = req.body._id
-        let obj = await Imovel.findByIdAndDelete(id)
+        let obj = await Visita.findByIdAndDelete(id)
 
         // Encontrou e excluiu
         if(obj) res.status(204).end()

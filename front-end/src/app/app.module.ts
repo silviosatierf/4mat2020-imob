@@ -33,6 +33,8 @@ import { IdentificacaoListComponent } from './identificacao/identificacao-list/i
 import { IdentificacaoFormComponent } from './identificacao/identificacao-form/identificacao-form.component';
 import { ImovelListComponent } from './imovel/imovel-list/imovel-list.component';
 import { ImovelFormComponent } from './imovel/imovel-form/imovel-form.component';
+import { VisitaListComponent } from './visita/visita-list/visita-list.component';
+import { VisitaFormComponent } from './visita/visita-form/visita-form.component';
 
 
 
@@ -53,7 +55,9 @@ import { ImovelFormComponent } from './imovel/imovel-form/imovel-form.component'
     IdentificacaoListComponent,
     IdentificacaoFormComponent,
     ImovelListComponent,
-    ImovelFormComponent
+    ImovelFormComponent,
+    VisitaListComponent,
+    VisitaFormComponent
     
   ],
   imports: [

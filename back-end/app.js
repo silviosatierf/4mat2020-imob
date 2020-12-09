@@ -63,6 +63,10 @@ app.use('/identificacao', identificacao)
 const imovel = require('./routes/imovel')
 app.use('/imovel', imovel)
 
+// Rota para Visita
+const visita = require('./routes/visita')
+app.use('/visita', visita)
+
 // Rota para Corretor
 const corretor = require('./routes/corretor')
 app.use('/corretor', corretor)

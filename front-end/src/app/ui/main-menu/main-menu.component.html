@@ -2,10 +2,11 @@
   <mat-icon>menu</mat-icon>
 </button>
 <mat-menu #menu="matMenu">
+  <a [routerLink]="['/visita']" mat-menu-item><mat-icon> vpn_key</mat-icon>Visita</a>
   <a [routerLink]="['/imovel']" mat-menu-item><mat-icon>account_balance</mat-icon>Imovel</a>
   <a [routerLink]="['/complemento']" mat-menu-item><mat-icon>rounded_corner</mat-icon>Complemento</a>
   <a [routerLink]="['/corretor']" mat-menu-item><mat-icon>assignment_ind</mat-icon>Corretor</a>
   <a [routerLink]="['/identificacao']" mat-menu-item><mat-icon>create_new_folder</mat-icon>Identificacao</a>
-  <a [routerLink]="['/curso']" mat-menu-item>Curso</a>
-  <a [routerLink]="['/turma']" mat-menu-item>Turma</a>
+  <!--<a [routerLink]="['/curso']" mat-menu-item>Curso</a>
+  <a [routerLink]="['/turma']" mat-menu-item>Turma</a>-->
 </mat-menu>

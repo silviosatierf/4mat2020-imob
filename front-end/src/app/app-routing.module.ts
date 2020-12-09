@@ -1,3 +1,5 @@
+import { VisitaListComponent } from './visita/visita-list/visita-list.component';
+import { VisitaFormComponent } from './visita/visita-form/visita-form.component';
 import { ImovelListComponent } from './imovel/imovel-list/imovel-list.component';
 import { ImovelFormComponent } from './imovel/imovel-form/imovel-form.component';
 import { IdentificacaoListComponent } from './identificacao/identificacao-list/identificacao-list.component';
@@ -15,6 +17,10 @@ import { TurmaFormComponent } from './turma/turma-form/turma-form.component';
 
 const routes: Routes = [
     // Rotas no Angular NUNCA  começam com /
+    {path: 'visita', component: VisitaListComponent},
+    {path: 'visita/novo', component: VisitaFormComponent},
+    {path: 'visita/:id', component: VisitaFormComponent},
+
     {path: 'imovel', component: ImovelListComponent},
     {path: 'imovel/novo', component: ImovelFormComponent},
     {path: 'imovel/:id', component: ImovelFormComponent},

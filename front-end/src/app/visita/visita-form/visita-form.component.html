@@ -1,0 +1,62 @@
+<h1>{{ title }}</h1>
+
+<form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+  <mat-form-field>
+    <mat-label>Nome da Visita</mat-label>
+    <input name="nome" [(ngModel)]="visita.nome" matInput required
+      placeholder="Informe o nome da visita">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Data inicial</mat-label>
+    <input matInput [matDatepicker]="data_inicial" [(ngModel)]="visita.data_inicial"
+    name="data_inicial" required>
+    <mat-datepicker-toggle matSuffix [for]="data_inicial"></mat-datepicker-toggle>
+    <mat-datepicker #data_inicial></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Dias da semana</mat-label>
+    <mat-select name="dias_semana" [(ngModel)]="visita.dias_semana" required multiple>
+      <mat-option *ngFor="let dia of diasSemana" [value]="dia.val">
+        {{ dia.descr }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Horário inicial</mat-label>
+    <input name="horario_inicial" [(ngModel)]="visita.horario_inicial" matInput required
+      placeholder="Informe o horário inicial" mask="00:00" [dropSpecialCharacters]="false">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Horário final</mat-label>
+    <input name="horario_final" [(ngModel)]="visita.horario_final" matInput required
+      placeholder="Informe o horário final" mask="00:00" [dropSpecialCharacters]="false">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Imovel Escolhido</mat-label>
+    <mat-select name="imovel" [(ngModel)]="visita.imovel" required>
+       <!-- No mat-option, usamso a listagem da entidade relacionada
+        para gerar as opções que serão exibidas ao usuario-->
+      <mat-option *ngFor="let imovel of imoveis" [value]="imovel._id">
+        {{ imovel.nome }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-toolbar class="form-buttons">
+    <mat-toolbar-row>
+      <button mat-raised-button type="submit" color="accent">
+        Salvar
+      </button>
+      <button mat-raised-button type="button" (click)="voltar(f)">
+        Voltar
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+</form>
+
